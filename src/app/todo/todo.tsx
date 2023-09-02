@@ -3,13 +3,13 @@ import { yeramStyle } from "./style";
 import Image from "next/image";
 import { useStore } from "./store";
 import { useForm } from "react-hook-form";
-import { FieldValue } from "react-hook-form";
 interface DataType {
   input: string;
-  FieldValues: () => void;
 }
 export default function Todo() {
   const { push, setPush } = useStore();
+
+  //react hook form 타입지정 꼭해주기!
   const { handleSubmit, register } = useForm<DataType>();
   const onSubmit = (data: DataType) => {
     console.log(data);
