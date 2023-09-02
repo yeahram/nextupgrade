@@ -1,13 +1,22 @@
 "use client";
-
+import { yeramStyle } from "./plus/style";
 import Image from "next/image";
-import { useStore } from "./store";
+import { useStore } from "./plus/store";
+import Plus from "./plus/plus";
+import Todo from "./todo/todo";
+
 export default function Home() {
-  const { count, setCount } = useStore();
+  //plus 컴포넌트
+  // const { count, setCount } = useStore();
+
+  //todo
+
   return (
-    <>
-      <p>{count}</p>
-      <button onClick={setCount}>+</button>
-    </>
+    <div>
+      {/* plus 컴포넌트 */}
+      {/* <Plus></Plus> */}
+      {/* todo */}
+      <Todo></Todo>
+    </div>
   );
 }
