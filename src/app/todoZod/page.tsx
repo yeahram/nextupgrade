@@ -13,13 +13,17 @@ export default function TodoZode() {
   type SchemaType = z.infer<typeof Schema>; //onSubmit이나 map, filedArray쓸때 사용
 
   //type을 typeof+변수 로 넣어줘야한다.
-  const { handleSubmit, control } = useForm<SchemaType>({
+  const {
+    handleSubmit,
+    control,
+    formState: { errors },
+  } = useForm<SchemaType>({
     resolver: zodResolver(Schema),
   });
 
   const onSubmit = (data: SchemaType) => {
     setPush(data.inputTodo);
-    console.log(data);
+    console.log("input 입력 값 : ", data.inputTodo);
   };
   // const watch = useWatch({ control });
 
@@ -38,7 +42,7 @@ export default function TodoZode() {
                   placeholder="입력해주세용~"
                 ></input>
 
-                <p>{formState.errors.inputTodo?.message}</p>
+                {/* <p>{formState.errors.inputTodo?.message}</p> */}
                 {/* 일반적으로 controll을 써서 가져오지 않는 경우에는 react hook form에서 formError를 넣어서 가져오면 된다. */}
               </>
             )}
@@ -48,6 +52,7 @@ export default function TodoZode() {
             +
           </button>
         </div>
+        <div className="text-red-600">{errors.inputTodo?.message}</div>
       </form>
     </div>
   );

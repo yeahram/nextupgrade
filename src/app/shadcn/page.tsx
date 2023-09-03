@@ -21,6 +21,12 @@ const Shadcn = () => {
       >
         card
       </div>
+      <div
+        className="w-52 rounded-sm border m-5 hover:cursor-pointer"
+        onClick={() => router.push("/shadcn/alertModal")}
+      >
+        alert Dialog
+      </div>
     </div>
   );
 };
