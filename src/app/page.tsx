@@ -22,7 +22,10 @@ export default function Home() {
       {/* <Todo></Todo> */}
 
       {/* typescript 사용한 todo */}
-      <TodoZode></TodoZode>
+      {/* <TodoZode></TodoZode> */}
+
+      {/* shardcn */}
+      {/* <Shardcn></Shardcn> */}
     </div>
   );
 }
