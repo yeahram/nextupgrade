@@ -1,11 +1,27 @@
-import { Button } from "@/components/ui/button";
-import { Apple } from "lucide-react";
+"use client";
+
+import { yeramStyle } from "./style";
+
+import { useRouter } from "next/navigation";
+
 const Shadcn = () => {
+  const router = useRouter();
+
   return (
-    <Button variant="purple">
-      <Apple size={17} />
-      버튼
-    </Button>
+    <div className={yeramStyle}>
+      <div
+        className="w-52 rounded-sm border m-5 hover:cursor-pointer"
+        onClick={() => router.push("/shadcn/button")}
+      >
+        button
+      </div>
+      <div
+        className="w-52 rounded-sm border m-5 hover:cursor-pointer"
+        onClick={() => router.push("/shadcn/card")}
+      >
+        card
+      </div>
+    </div>
   );
 };
 export default Shadcn;
