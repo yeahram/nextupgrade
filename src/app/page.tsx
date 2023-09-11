@@ -4,8 +4,8 @@ import Image from "next/image";
 import { useStore } from "./plus/store";
 
 import Plus from "./plus/plus"; // plus 컴포넌트
-import Todo from "./todo/todo"; // typescript 사용한 todo
-import TodoZode from "./todoZod/todo"; // zod 사용한 todoZod
+import Todo from "./todo/page"; // typescript 사용한 todo
+import TodoZode from "./control_hookform/page"; // zod 사용한 todoZod
 
 export default function Home() {
   //plus 컴포넌트
